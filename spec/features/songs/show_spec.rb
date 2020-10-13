@@ -8,7 +8,6 @@ describe "As a user" do
                            play_count:  243810867)
 
 
-                           require "pry"; binding.pry
       visit "/songs/#{song_1.id}"
 
       expect(page).to have_content("#{song_1.title}")
