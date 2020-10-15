@@ -8,7 +8,7 @@ describe 'new artist' do
       end
 
       it 'I can not create an artist without a name' do
-        visit '/artists/new'
+        visit artists_new_path 
 
         click_on 'Create Artist'
 
