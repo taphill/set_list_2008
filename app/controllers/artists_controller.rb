@@ -8,8 +8,14 @@ class ArtistsController < ApplicationController
   end
 
   def create
-    Artist.create(artist_params)
-    redirect_to artists_path
+    artist = Artist.new(artist_params)
+
+    if artist.save
+      redirect_to '/artists'
+    else
+      flash[:notice] = "Artist not created: Required information missing."
+      render :new
+    end
   end
 
   private
